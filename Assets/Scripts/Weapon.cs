@@ -18,6 +18,8 @@ public class Weapon : MonoBehaviour
 
     [SerializeField]
     private Projectile projectilePrefab;
+    [SerializeField]
+    private SpriteRenderer srWeapon;
 
     private void Awake() 
     {
@@ -73,5 +75,16 @@ public class Weapon : MonoBehaviour
     public void UpdateRotation(Vector2 lookDirection)
     {
         transform.rotation = Quaternion.Euler(0f, 0f, Vector2.SignedAngle(Vector2.right, lookDirection));
+        float angleLookDirection = Vector2.Angle(Vector2.right, lookDirection);
+        if (angleLookDirection > 90f && angleLookDirection <= 270f)
+        {
+            srWeapon.flipY = true;
+        }
+        else
+        {
+            srWeapon.flipY = false;
+        }
+
+
     }
 }

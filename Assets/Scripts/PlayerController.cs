@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -13,6 +11,11 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private Weapon weapon;
+    [SerializeField]
+    private Animator animator;
+    [SerializeField]
+    private SpriteRenderer srCharacter;   
+
 
     private void Awake() 
     {
@@ -23,8 +26,10 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+        // animator.runtimeAnimatorController.
+        // animator.runtimeAnimatorController.animationClips.
+ 
+
     }
 
     // Update is called once per frame
@@ -53,9 +58,28 @@ public class PlayerController : MonoBehaviour
                 weapon.StopFire();
             }
         }
+        //Flip Art to lookdirection
+        float angleLookDirection = Vector2.Angle(Vector2.right, lookDirection);
+        if (angleLookDirection > 90f && angleLookDirection <= 270f)
+        {
+            srCharacter.flipX = true;
+        }
+        else
+        {
+            srCharacter.flipX = false;
+        }
+
 
         //Movement input
         inputVector = new Vector2(Input.GetAxisRaw("Horizontal"), 0f).normalized;
+        if (inputVector.magnitude > 0f)
+        {
+            animator.Play("Run");
+        }
+        else
+        {
+            animator.Play("Idle");
+        }
    
     }
 

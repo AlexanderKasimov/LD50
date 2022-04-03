@@ -6,6 +6,11 @@ public class Enemy : MonoBehaviour
 {
     private GameObject target;
 
+    [SerializeField]
+    private Animator animator;
+    [SerializeField]
+    private SpriteRenderer srCharacter;
+
 
 
     // Start is called before the first frame update
