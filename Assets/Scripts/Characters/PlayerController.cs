@@ -2,24 +2,37 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Singleton
+    public static PlayerController instance;
+
+    //Movement
     [SerializeField]
     private float movementSpeed = 4f;
 
     private Rigidbody2D rb;
 
     private Vector2 inputVector;
-
+    //Weapon
     [SerializeField]
     private Weapon weapon;
+
+    //Art
     [SerializeField]
     private Animator animator;
     [SerializeField]
-    private SpriteRenderer srCharacter;   
+    private SpriteRenderer srCharacter;
+
+    private UsableUser usableUser;
+
+    public StatsModule statsModule;
 
 
-    private void Awake() 
+    private void Awake()
     {
+        instance = this;
         rb = GetComponent<Rigidbody2D>();
+        usableUser = GetComponent<UsableUser>();
+        statsModule = GetComponent<StatsModule>();
     }
 
 
@@ -28,7 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         // animator.runtimeAnimatorController.
         // animator.runtimeAnimatorController.animationClips.
- 
+
 
     }
 
@@ -49,7 +62,7 @@ public class PlayerController : MonoBehaviour
             if (weapon)
             {
                 weapon.StartFire();
-            }        
+            }
         }
         else
         {
@@ -58,6 +71,17 @@ public class PlayerController : MonoBehaviour
                 weapon.StopFire();
             }
         }
+
+        //Usable input
+        if (Input.GetButtonDown("Use"))
+        {
+            if (usableUser)
+            {
+                usableUser.Use();
+            }
+        }
+
+
         //Flip Art to lookdirection
         float angleLookDirection = Vector2.Angle(Vector2.right, lookDirection);
         if (angleLookDirection > 90f && angleLookDirection <= 270f)
@@ -80,11 +104,11 @@ public class PlayerController : MonoBehaviour
         {
             animator.Play("Idle");
         }
-   
+
     }
 
 
-    private void FixedUpdate() 
+    private void FixedUpdate()
     {
         Vector2 movementVector = inputVector * movementSpeed * Time.fixedDeltaTime;
 
@@ -92,4 +116,20 @@ public class PlayerController : MonoBehaviour
 
         rb.MovePosition(rb.position + movementVector);
     }
+
+    public void TeleportToPosition(Vector2 position)
+    {
+        transform.position = position;
+        // rb.MovePosition(position);
+    }
+
+    public void Deactivate()
+    {
+        if (weapon)
+        {
+            weapon.StopFire();
+        }
+        gameObject.SetActive(false);
+    }
+
 }

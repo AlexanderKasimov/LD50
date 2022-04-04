@@ -46,7 +46,7 @@ public class Weapon : MonoBehaviour
     public void StartFire()
     {
         if (CanFire())
-        {
+        {      
             isFiring = true;
             InvokeRepeating("Fire", 0f, 60f / RPM);
         }
@@ -62,11 +62,11 @@ public class Weapon : MonoBehaviour
     {
         Projectile projectile = Instantiate(projectilePrefab, muzzle.position, Quaternion.identity);
         projectile.Init(transform.right, damage);
-        timeSinceFire = 0f;
+        timeSinceFire = 0f; 
     }
 
     private bool CanFire()
-    {
+    {    
         return !isFiring && (timeSinceFire >= 60f / RPM);
     }
 

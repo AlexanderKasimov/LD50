@@ -14,6 +14,8 @@ public class StatsModule : MonoBehaviour
 
     private DeathHandler deathHandler;
 
+    public float mentalState = 50f;
+
     private void Awake() 
     {
         curHP = HP;
@@ -49,5 +51,10 @@ public class StatsModule : MonoBehaviour
                 deathHandler.HandleDeath();
             }
         }
+    }
+
+    public void ChangeMentalState(float value)
+    {
+        mentalState = Mathf.Max(0f,Mathf.Min(mentalState + value, 100f));
     }
 }
