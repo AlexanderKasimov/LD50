@@ -16,7 +16,7 @@ public class DeathHandler : MonoBehaviour
         
     }
 
-    public void HandleDeath()
+    public virtual void HandleDeath()
     {
         Destroy(gameObject);
     }

@@ -6,9 +6,8 @@ public class Enemy : MonoBehaviour
 {
     protected GameObject target;
 
-    [SerializeField]
     private Animator animator;
-    [SerializeField]
+  
     private SpriteRenderer srCharacter;
 
     [SerializeField]
@@ -32,8 +31,10 @@ public class Enemy : MonoBehaviour
 
     private void Awake() 
     {        
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();        
         statsModule = GetComponent<StatsModule>();
+        srCharacter = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
     }
 
 
@@ -126,7 +127,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Attack()
     {
-        Debug.Log("Attack");
+        // Debug.Log("Attack");
         timeSinceAttack = 0f;
     }
 

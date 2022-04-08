@@ -29,12 +29,12 @@ public class DialogManager : MonoBehaviour
     [SerializeField]
     private DialogContainer radioNegativeDialog;
 
-    //Dialogs containers
+    //Dialogs containers   
     private List<DialogContainer> introDialogContainer;
 
     private List<DialogContainer> sarahDeadDialogContainer;
 
-    private List<DialogContainer> genericDialogContainer;  
+    private List<DialogContainer> genericDialogContainer;
 
     //Current
     private DialogContainer currentDialog;
@@ -65,11 +65,11 @@ public class DialogManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Init Dialog Known dialog containers
-        introDialogContainer.Clear();
+        //Init Dialog Known dialog containers       
+        introDialogContainer = new List<DialogContainer>();
         introDialogContainer.Add(introDialog);
 
-        sarahDeadDialogContainer.Clear();
+        sarahDeadDialogContainer = new List<DialogContainer>();
         sarahDeadDialogContainer.Add(sarahDeadDialog);
 
 
@@ -84,9 +84,10 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialog(bool isIntro, bool isSarahDead)
     {
+        Debug.Log("Start Dialog");
         if (isIntro)
         {
-            PlayDialogContainer(introDialogContainer); 
+            PlayDialogContainer(introDialogContainer);
             return;
         }
         if (isSarahDead)
@@ -96,7 +97,7 @@ public class DialogManager : MonoBehaviour
         }
         //Play Generic dialog 
         GenerateGenericDialog();
-        PlayDialogContainer(genericDialogContainer); 
+        PlayDialogContainer(genericDialogContainer);
     }
 
     //Playing Dialogs
@@ -117,9 +118,8 @@ public class DialogManager : MonoBehaviour
             Debug.Log("EndDialogContainer");
             EndDialogEvent();
             return;
-        }
-        PlayDialog(currentDialogContainer[currentDialogIndex]);
-        currentDialogIndex++;
+        }     
+        PlayDialog(currentDialogContainer[currentDialogIndex++]);     
     }
 
     private void PlayDialog(DialogContainer dialog)
@@ -146,14 +146,14 @@ public class DialogManager : MonoBehaviour
             if (currentDialog.dialog[currentDialogEntryIndex].mentalStateEffect != 0f)
             {
                 GameManager.instance.ChangeMentalStates(currentDialog.dialog[currentDialogEntryIndex].mentalStateEffect);
-            }            
+            }
         }
         else
         {
             EndDialogEvent();
         }
         currentDialogEntryIndex++;
-    }   
+    }
 
     public void EndDialogEvent()
     {

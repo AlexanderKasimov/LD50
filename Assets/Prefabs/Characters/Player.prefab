@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1770751144691630267}
   - component: {fileID: 1770751144691630264}
   - component: {fileID: 1770751144691630266}
+  - component: {fileID: 2863509331210461956}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -102,6 +103,7 @@ MonoBehaviour:
   weapon: {fileID: 1770751145043263884}
   animator: {fileID: 1770751144913330926}
   srCharacter: {fileID: 1770751144913330927}
+  statsModule: {fileID: 0}
 --- !u!114 &1770751144691630267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +120,7 @@ MonoBehaviour:
   curHP: 0
   ATK: 1
   isDead: 0
+  mentalState: 50
 --- !u!114 &1770751144691630264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +145,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 763c5af6ed8b7b54da0d4e6d0a9e13a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2863509331210461956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770751144691630258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ef32aa6179a6a24684566bebd137368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curve: {fileID: 11400000, guid: f8ba4ae56bfe28545988e7d83074a95b, type: 2}
+  duration: 0.2
 --- !u!1 &1770751144913330925
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +212,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9089899b9d2001f4bb447dc84d743abc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -213,8 +230,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -135270897
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: -779896975, guid: f46e2ac026f70de4599a41d661f926aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

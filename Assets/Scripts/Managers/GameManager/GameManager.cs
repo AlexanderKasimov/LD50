@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     //Days
     [SerializeField]
-    private int currentDay = 0;
+    public int currentDay = 0;
 
     [SerializeField]
     private int finalDay = 7;
@@ -44,7 +44,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentDay = 0;     
+        // currentDay = 0;
+        WaveManager.instance.StartWave();
     }
 
     // Update is called once per frame

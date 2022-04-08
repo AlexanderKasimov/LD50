@@ -48,6 +48,9 @@ TagManager:
   - name: PickUps
     uniqueID: 2267079537
     locked: 0
+  - name: Projectiles
+    uniqueID: 580075655
+    locked: 0
   - name: Characters
     uniqueID: 4159696399
     locked: 0

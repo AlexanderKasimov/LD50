@@ -14,12 +14,15 @@ public class StatsModule : MonoBehaviour
 
     private DeathHandler deathHandler;
 
+    private HitEffect hitEffect;
+
     public float mentalState = 50f;
 
     private void Awake() 
     {
         curHP = HP;
         deathHandler = GetComponent<DeathHandler>();
+        hitEffect = GetComponent<HitEffect>();
     }
 
 
@@ -50,6 +53,11 @@ public class StatsModule : MonoBehaviour
             {
                 deathHandler.HandleDeath();
             }
+        }
+        //Play material hit efffect if any
+        if (hitEffect)
+        {
+            hitEffect.PlayEffect();
         }
     }
 
