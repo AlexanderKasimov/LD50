@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int finalDay = 7;
 
+    [SerializeField]
+    private bool isSpawnTestWave = false;
+
 
 
     private void Awake()
@@ -45,7 +48,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // currentDay = 0;
-        WaveManager.instance.StartWave();
+        if (isSpawnTestWave)
+        {
+            WaveManager.instance.StartWave();
+        }
+
     }
 
     // Update is called once per frame
@@ -71,7 +78,7 @@ public class GameManager : MonoBehaviour
         baseCamera.SetActive(false);
 
         //Deactivate bone fire player
-        playerEndDayActor.SetActive(false);      
+        playerEndDayActor.SetActive(false);
 
         //Activate player and teleport
         PlayerController.instance.TeleportToPosition(playerBattlePosition.position);
@@ -82,7 +89,7 @@ public class GameManager : MonoBehaviour
     public void StartEndDayEvent()
     {
         PlayerController.instance.Deactivate();
-        playerEndDayActor.SetActive(true);     
+        playerEndDayActor.SetActive(true);
         DialogManager.instance.StartDialog(currentDay == 0, false);
     }
 

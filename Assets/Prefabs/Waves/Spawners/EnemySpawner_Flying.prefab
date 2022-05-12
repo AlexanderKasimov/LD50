@@ -53,15 +53,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5954767635356505149, guid: 8d10428ec3bfb7f44ae6e28502d7ac9b, type: 3}
       propertyPath: randomX.x
-      value: -7
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 5954767635356505149, guid: 8d10428ec3bfb7f44ae6e28502d7ac9b, type: 3}
       propertyPath: randomX.y
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5954767635356505149, guid: 8d10428ec3bfb7f44ae6e28502d7ac9b, type: 3}
       propertyPath: randomY.y
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5954767635356505149, guid: 8d10428ec3bfb7f44ae6e28502d7ac9b, type: 3}
       propertyPath: enemyPrefab
