@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_FlowmapSky
-  m_Shader: {fileID: -6465566751694194690, guid: 5f9731b12e84d124c9357cb9f1218b84, type: 3}
+  m_Name: M_UpgradeStation
+  m_Shader: {fileID: -6465566751694194690, guid: 770d697927e358e4a9cba1d977f0b450, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -20,12 +20,24 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _FlowMap:
-        m_Texture: {fileID: 2800000, guid: 6d9471510d173384f9d8d3a87a3cafb6, type: 3}
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissiveMask:
+        m_Texture: {fileID: 2800000, guid: 4282eed61ef685c4c824da8e16d6ddcf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6cb8bd00451d7da45858d68a98704f31, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1cddfc08a2099e04788eb1c0d6729146, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -42,7 +54,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Speed: 0.1
-    - _Speed2: -0.1
-    m_Colors: []
+    - _EnableExternalAlpha: 0
+    - _Power: 2.4
+    - _Saturation: 2
+    m_Colors:
+    - _Color: {r: 1.4980392, g: 0.4593613, b: 0.21960783, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
