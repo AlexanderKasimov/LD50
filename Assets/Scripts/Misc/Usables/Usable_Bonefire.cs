@@ -7,7 +7,9 @@ public class Usable_Bonefire : Usable
 
     public override void Use()
     {
-        GameManager.instance.StartEndDayEvent();
+        GameManager.instance.TransitionToBatte();
+        //Debug.LogWarning("Bonefire not working yet!");
+        //GameManager.instance.StartEndDayEvent();
     }
 
 }

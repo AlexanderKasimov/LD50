@@ -233,13 +233,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsWeights:
   - key: {fileID: 0}
-    value: 4
+    value: 10
   - key: {fileID: 1914817137169836309, guid: 6c36ace3feb0c3a4e968d7d810861832, type: 3}
     value: 6
   - key: {fileID: 1914817137169836309, guid: d7667eb049945574496ecb99f74e7140, type: 3}
-    value: 4
-  - key: {fileID: 1914817137169836309, guid: 611f2db991199064ab05d4135523fade, type: 3}
     value: 2
+  - key: {fileID: 1914817137169836309, guid: 611f2db991199064ab05d4135523fade, type: 3}
+    value: 1
 --- !u!114 &940991835040061516
 MonoBehaviour:
   m_ObjectHideFlags: 0

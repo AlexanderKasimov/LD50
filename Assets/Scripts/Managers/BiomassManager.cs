@@ -7,7 +7,7 @@ public class BiomassManager : MonoBehaviour
     //Singleton
     public static BiomassManager instance;
 
-    public int currentBiomass = 0;
+    [field: SerializeField] public int CurrentBiomass { get; private set; } = 0;
 
 
     private void Awake() 
@@ -17,7 +17,23 @@ public class BiomassManager : MonoBehaviour
 
     public void AddBiomass(int value)
     {
-        currentBiomass += value;
+        CurrentBiomass += value;
+    }
+
+    public void SubtractBiomass(int value)
+    {
+        CurrentBiomass = Mathf.Max(0, CurrentBiomass - value);
+    }
+
+    public bool TryToPurchase(int price)
+    {   
+        if (CurrentBiomass < price)
+        {
+            Debug.Log("Purchase failed, not enough biomass:" + CurrentBiomass + "/" + price);
+            return false;
+        }
+        SubtractBiomass(price);
+        return true;
     }
 
 

@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -135270897
-  m_SortingLayer: -1
+  m_SortingLayerID: -288510357
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: -173991643, guid: 94c3c4a752a90a741b14529648c6a71a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -116,10 +116,11 @@ GameObject:
   - component: {fileID: 377497109214584703}
   - component: {fileID: 377497109214584641}
   - component: {fileID: 377497109214584642}
-  - component: {fileID: 377497109214584702}
+  - component: {fileID: 6692395849400423119}
   - component: {fileID: 377497109214584644}
   - component: {fileID: 377497109214584645}
   - component: {fileID: 4500319138652688263}
+  - component: {fileID: 377497108204195239}
   m_Layer: 6
   m_Name: Sarah
   m_TagString: Player
@@ -140,7 +141,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 377497107706272850}
-  - {fileID: 6312647395926097915}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -191,7 +191,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.928854, y: 3.0736668}
   m_EdgeRadius: 0
---- !u!114 &377497109214584702
+--- !u!114 &6692395849400423119
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,15 +200,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 377497109214584646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac47e36d9006d8d4e93e887894384325, type: 3}
+  m_Script: {fileID: 11500000, guid: 828d9214682093648aa40fd364acd1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  animator: {fileID: 377497107706272849}
   defaultDirection: {x: -1, y: 0}
-  statsModule: {fileID: 0}
-  weapon: {fileID: 6312647395926097914}
-  srCharacter: {fileID: 377497107706272851}
+  maxTargetDistance: 15
+  debugEnabled: 0
 --- !u!114 &377497109214584644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,76 +249,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curve: {fileID: 11400000, guid: f8ba4ae56bfe28545988e7d83074a95b, type: 2}
   duration: 0.2
---- !u!1001 &8580333101025249941
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 377497109214584703}
-    m_Modifications:
-    - target: {fileID: 2344246901527475553, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}
-      propertyPath: m_Name
-      value: Weapon_Sarah_Sniper
-      objectReference: {fileID: 0}
-    - target: {fileID: 2344246901527475566, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2344246901527475566, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2344246901527475566, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2344246901527475566, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2344246901527475566, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2344246901527475566, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2344246901527475566, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2344246901527475566, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2344246901527475566, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2344246901527475566, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2344246901527475566, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}
---- !u!114 &6312647395926097914 stripped
+--- !u!114 &377497108204195239
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2344246901527475567, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}
-  m_PrefabInstance: {fileID: 8580333101025249941}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 377497109214584646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83e4da74bb3bbff489265a4c98be688d, type: 3}
+  m_Script: {fileID: 11500000, guid: 44376b4f6f948c94f9282eb5af95da59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &6312647395926097915 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2344246901527475566, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}
-  m_PrefabInstance: {fileID: 8580333101025249941}
-  m_PrefabAsset: {fileID: 0}
+  movementSpeed: 4
+  startingWeaponPrefab: {fileID: 2344246901527475567, guid: ccf1f8193f74eb1469fd758b40f24041, type: 3}

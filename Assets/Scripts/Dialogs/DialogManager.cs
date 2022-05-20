@@ -163,14 +163,14 @@ public class DialogManager : MonoBehaviour
     private void GenerateGenericDialog()
     {
         genericDialogContainer.Clear();
-        if (SarahController.instance.statsModule.mentalState < negativeSarahMentalStateThreshold)
-        {
-            genericDialogContainer.Add(sarahNegativeDialog);
-        }
-        else
-        {
-            genericDialogContainer.Add(sarahPositiveDialog);
-        }
+        // if (SarahController.instance.statsModule.mentalState < negativeSarahMentalStateThreshold)
+        // {
+        //     genericDialogContainer.Add(sarahNegativeDialog);
+        // }
+        // else
+        // {
+        //     genericDialogContainer.Add(sarahPositiveDialog);
+        // }
         genericDialogContainer.Add(playerResponseDialog);
         float radioPositiveRoll = Random.Range(0f, 100f);
         if (radioPositiveRoll <= radioPositiveChance)

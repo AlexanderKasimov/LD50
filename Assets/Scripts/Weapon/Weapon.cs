@@ -4,31 +4,32 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    //Weapon info (purchase)
+    [field: SerializeField, Header("Weapon info")] public string WeaponName { get; private set; }
+
+    [field: SerializeField, Range(0f, 25000f)] public float WeaponPrice { get; private set; } = 100f;
+
+    //Weapon stats
+    [Header("Weapon stats")]
+
     [SerializeField]
+    [Range(0f,1500f)]
     private float RPM = 300f;
+
     [SerializeField]
+    [Range(0f, 500f)]
     private float ATK = 10f;
 
     [SerializeField]
+    [Range(0f, 25f)]
     private float spreadAngle = 5f;
 
-    private float timeSinceFire;
-
-    private bool isFiring = false;
-
     [SerializeField]
-    private Transform muzzle;
-
-    [SerializeField]
-    private Projectile projectilePrefab;
-    [SerializeField]
-    private SpriteRenderer srWeapon;
-
-    [SerializeField]
-    private bool isDebugEnabled = false;
+    private Projectile projectilePrefab; 
 
     //Recoil Params
     [Header("Recoil")]
+
     [SerializeField]
     private ScriptableObjectAnimCurve recoilPositionXCurve;
 
@@ -36,27 +37,52 @@ public class Weapon : MonoBehaviour
     private ScriptableObjectAnimCurve recoilRotationCurve;
 
     [SerializeField]
-    private GameObject artObject;
+    [Range(0f, 3f)]
+    private float recoilDurationMultiplier = 1f;
 
     [SerializeField]
-    private float recoilDurationMultiplier = 1f;
-    [SerializeField]
+    [Range(0f, 3f)]
     private float recoilPositionXMultiplier = 1f;
+
     [SerializeField]
+    [Range(0f, 3f)]
     private float recoilRotationMultiplier = 1f;
 
+    //Setted in inspector
+    [Header("Game Objects")]
+
+    [SerializeField]
+    private Transform muzzle;
+
+    [SerializeField]
+    [Tooltip("Used for recoil")]
+    private GameObject artObject;
+
+    //Debug
+    [Header("Debug")]
+
+    [SerializeField]
+    private bool isDebugEnabled = false;
+
+    //private fields
+
+    private float timeSinceFire;
+
+    private bool isFiring = false;
+
+    private SpriteRenderer srWeapon;
 
     private void Awake()
     {
         timeSinceFire = 60f / RPM;
-
+        srWeapon = GetComponentInChildren<SpriteRenderer>();
     }
 
 
 
     // Start is called before the first frame update
     void Start()
-    {        
+    {
 
     }
 
@@ -124,7 +150,7 @@ public class Weapon : MonoBehaviour
 
     private IEnumerator PlayRecoil()
     {
-    
+
         if (!artObject)
         {
             yield break;
@@ -136,8 +162,8 @@ public class Weapon : MonoBehaviour
         {
             // Debug.Log("Rotation:" + Quaternion.Euler(0f, 0f, recoilRotationCurve.animationCurve.Evaluate(time / recoilDuration) * recoilRotationMultiplier));
             // Debug.Log("Position:" + new Vector3(recoilPositionXCurve.animationCurve.Evaluate(time / recoilDuration) * recoilPositionXMultiplier, 0f, 0f));
-            artObject.transform.localRotation = Quaternion.Euler(0f, 0f, Mathf.Sign(transform.right.x)* recoilRotationCurve.animationCurve.Evaluate(time / recoilDuration) * recoilRotationMultiplier);
-            artObject.transform.localPosition= new Vector3(recoilPositionXCurve.animationCurve.Evaluate(time / recoilDuration) * recoilPositionXMultiplier, 0f, 0f);
+            artObject.transform.localRotation = Quaternion.Euler(0f, 0f, Mathf.Sign(transform.right.x) * recoilRotationCurve.animationCurve.Evaluate(time / recoilDuration) * recoilRotationMultiplier);
+            artObject.transform.localPosition = new Vector3(recoilPositionXCurve.animationCurve.Evaluate(time / recoilDuration) * recoilPositionXMultiplier, 0f, 0f);
             time += Time.deltaTime;
             yield return null;
         }
@@ -152,6 +178,7 @@ public class Weapon : MonoBehaviour
         {
             return;
         }
+        //Spread debug
         float linesLength = 10f;
         Gizmos.color = Color.red;
         Gizmos.DrawLine(muzzle.transform.position, muzzle.transform.position + transform.right * linesLength);

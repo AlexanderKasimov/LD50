@@ -35,6 +35,14 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private bool isSpawnTestWave = false;
 
+    //Characters 
+
+    [field: SerializeField, Header("Characters")] public Character PlayerCharacter { get; private set; }
+
+    [field: SerializeField] public Character SarahCharacter { get; private set; }
+
+
+
 
 
     private void Awake()
@@ -67,7 +75,7 @@ public class GameManager : MonoBehaviour
     {
         battleCamera.SetActive(false);
         baseCamera.SetActive(true);
-        PlayerController.instance.TeleportToPosition(playerBasePosition.position);
+        PlayerCharacter.TeleportToPosition(playerBasePosition.position);
     }
 
     //Not Ready Yet
@@ -81,14 +89,14 @@ public class GameManager : MonoBehaviour
         playerEndDayActor.SetActive(false);
 
         //Activate player and teleport
-        PlayerController.instance.TeleportToPosition(playerBattlePosition.position);
-        PlayerController.instance.gameObject.SetActive(true);
+        PlayerCharacter.TeleportToPosition(playerBattlePosition.position);
+        PlayerCharacter.gameObject.SetActive(true);
     }
 
     //End day Event
     public void StartEndDayEvent()
     {
-        PlayerController.instance.Deactivate();
+        PlayerCharacter.Deactivate();
         playerEndDayActor.SetActive(true);
         DialogManager.instance.StartDialog(currentDay == 0, false);
     }
@@ -102,7 +110,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeMentalStates(float value)
     {
-        PlayerController.instance.statsModule.ChangeMentalState(value);
-        SarahController.instance.statsModule.ChangeMentalState(value);
+        PlayerCharacter.StatsModule.ChangeMentalState(value);
+        SarahCharacter.StatsModule.ChangeMentalState(value);
     }
 }

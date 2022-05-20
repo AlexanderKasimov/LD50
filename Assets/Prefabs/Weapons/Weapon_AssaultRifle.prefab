@@ -27,6 +27,14 @@ PrefabInstance:
       propertyPath: recoilPositionXMultiplier
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 4390165165595221848, guid: 1f5cfbecc5811cd4db2ce91aea0a7070, type: 3}
+      propertyPath: <WeaponName>k__BackingField
+      value: Assault Rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390165165595221848, guid: 1f5cfbecc5811cd4db2ce91aea0a7070, type: 3}
+      propertyPath: <WeaponPrice>k__BackingField
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4390165165595221849, guid: 1f5cfbecc5811cd4db2ce91aea0a7070, type: 3}
       propertyPath: m_RootOrder
       value: 0
