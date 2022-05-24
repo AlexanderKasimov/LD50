@@ -16,7 +16,7 @@ public class HitEffect : MonoBehaviour
 
     private void Awake()
     {
-        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+              
     }
 
     public void PlayEffect()
@@ -32,13 +32,15 @@ public class HitEffect : MonoBehaviour
 
     private IEnumerator PlayEffectCoroutine()
     {
+        //Have to set every time cause characters spawn weapons -> to not add dependency character -> hitEffect
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         // Debug.Log("Start playing");
         float time = 0f;
         while (time < duration)
         {
             float parameterValue = curve.animationCurve.Evaluate(time / duration);
             foreach (var item in spriteRenderers)
-            {
+            {            
                 // Debug.Log("Setted:" +parameterValue);
                 item.material.SetFloat("_Control", parameterValue);
             }

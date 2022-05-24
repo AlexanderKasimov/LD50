@@ -49,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3072734642026266161, guid: ab59c1a6f23e0494b9f2d07801ae093b, type: 3}
       propertyPath: HP
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3072734642026266161, guid: ab59c1a6f23e0494b9f2d07801ae093b, type: 3}
       propertyPath: ATK

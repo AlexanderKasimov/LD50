@@ -12,13 +12,27 @@ public class SpawnBeam : MonoBehaviour
     public float time;
 
     // Start is called before the first frame update
-    void Awake(){
-        transform.position = Point1;
+    void Awake() {
+        //transform.position = Point1;
         tr = GetComponent<TrailRenderer>();
-        time = 0f;
+        //time = 0f;
     }
 
     void Start()
+    {
+        //transform.position = Point2;
+    }
+
+    public void Init(Vector2 startPos, Vector2 endPos)
+    {
+        time = 0f;
+        transform.position = startPos;
+        Point2 = endPos;
+        Invoke("MoveToEnd", 0.1f);
+        
+    }
+
+    private void MoveToEnd()
     {
         transform.position = Point2;
     }
@@ -26,9 +40,11 @@ public class SpawnBeam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
+     
         if (time < tr.time/2)
         {
             time += Time.deltaTime;
+            //tr.widthMultiplier = 
             tr.material.SetFloat("_BeamWidth", Mathf.Lerp(0,10, time/tr.time));
         }
         if (time > tr.time/2 && time < tr.time)

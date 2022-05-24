@@ -110,7 +110,7 @@ public class Character : MonoBehaviour
             Debug.Log("No starting Weapon ");
             return;
         }
-        CurWeapon = Instantiate(startingWeaponPrefab, transform);
+        CurWeapon = Instantiate(startingWeaponPrefab, transform);       
     }
 
     public void SwitchWeapon(Weapon weapon)

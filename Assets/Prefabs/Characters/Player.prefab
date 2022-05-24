@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 4
-  startingWeaponPrefab: {fileID: 2344246901527475567, guid: bb009530586e1fd4f9acc52fbfb83fa6, type: 3}
+  startingWeaponPrefab: {fileID: 8941209303637172760, guid: 5a485b4ee9c9fe845bd03d4e3b08dba0, type: 3}
 --- !u!1 &1770751144913330925
 GameObject:
   m_ObjectHideFlags: 0

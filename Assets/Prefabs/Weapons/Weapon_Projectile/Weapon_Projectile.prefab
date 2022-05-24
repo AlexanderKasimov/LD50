@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8186795324985930198
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4390165165595221846, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+      propertyPath: m_Name
+      value: Weapon_Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390165165595221849, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390165165595221849, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390165165595221849, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390165165595221849, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390165165595221849, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390165165595221849, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390165165595221849, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390165165595221849, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390165165595221849, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390165165595221849, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390165165595221849, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+--- !u!4 &5580427288914153697 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4390165166390681911, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+  m_PrefabInstance: {fileID: 8186795324985930198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5580427289178102330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4390165166135061484, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+  m_PrefabInstance: {fileID: 8186795324985930198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5580427289709358720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4390165165595221846, guid: 90c7f8013075dec45b26f77343e51b7e, type: 3}
+  m_PrefabInstance: {fileID: 8186795324985930198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6390524788556377058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580427289709358720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5772da92bedfa2643be7da1151e635fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <WeaponName>k__BackingField: 
+  <WeaponPrice>k__BackingField: 100
+  RPM: 300
+  ATK: 10
+  spreadAngle: 7
+  recoilPositionXCurve: {fileID: 11400000, guid: 8c4ff182463553049b083f6436ea08b2, type: 2}
+  recoilRotationCurve: {fileID: 11400000, guid: e646b891dd65e354081996d1318bbdb6, type: 2}
+  recoilDurationMultiplier: 1
+  recoilPositionXMultiplier: 0.2
+  recoilRotationMultiplier: 1
+  muzzle: {fileID: 5580427288914153697}
+  artObject: {fileID: 5580427289178102330}
+  isDebugEnabled: 0
+  projectilePrefab: {fileID: 8175720158471015390, guid: dfd07994aa102e24483a0f620ac4242a, type: 3}

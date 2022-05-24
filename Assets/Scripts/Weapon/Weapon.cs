@@ -5,9 +5,9 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     //Weapon info (purchase)
-    [field: SerializeField, Header("Weapon info")] public string WeaponName { get; private set; }
+    [field: SerializeField, Header("Weapon info")] public string WeaponName { get; protected set; }
 
-    [field: SerializeField, Range(0f, 25000f)] public float WeaponPrice { get; private set; } = 100f;
+    [field: SerializeField, Range(0f, 25000f)] public float WeaponPrice { get; protected set; } = 100f;
 
     //Weapon stats
     [Header("Weapon stats")]
@@ -18,14 +18,11 @@ public class Weapon : MonoBehaviour
 
     [SerializeField]
     [Range(0f, 500f)]
-    private float ATK = 10f;
+    protected float ATK = 10f;
 
     [SerializeField]
     [Range(0f, 25f)]
-    private float spreadAngle = 5f;
-
-    [SerializeField]
-    private Projectile projectilePrefab; 
+    private float spreadAngle = 5f;  
 
     //Recoil Params
     [Header("Recoil")]
@@ -52,7 +49,7 @@ public class Weapon : MonoBehaviour
     [Header("Game Objects")]
 
     [SerializeField]
-    private Transform muzzle;
+    protected Transform muzzle;
 
     [SerializeField]
     [Tooltip("Used for recoil")]
@@ -62,15 +59,17 @@ public class Weapon : MonoBehaviour
     [Header("Debug")]
 
     [SerializeField]
-    private bool isDebugEnabled = false;
+    protected bool isDebugEnabled = false;
 
     //private fields
 
-    private float timeSinceFire;
+    protected float timeSinceFire;
 
     private bool isFiring = false;
 
     private SpriteRenderer srWeapon;
+
+    protected Vector2 spreadVector;
 
     private void Awake()
     {
@@ -87,7 +86,7 @@ public class Weapon : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         //Update timeSinceFire
         timeSinceFire += Time.deltaTime;
@@ -109,15 +108,14 @@ public class Weapon : MonoBehaviour
         CancelInvoke("Fire");
     }
 
-    private void Fire()
+    protected virtual void Fire()
     {
-        Projectile projectile = Instantiate(projectilePrefab, muzzle.position, Quaternion.identity);
-        projectile.Init(CalculateSpread(), ATK);
+        spreadVector = CalculateSpread();
         timeSinceFire = 0f;
         StartCoroutine("PlayRecoil");
     }
 
-    private Vector2 CalculateSpread()
+    protected Vector2 CalculateSpread()
     {
         float randomAngle = Random.Range(-spreadAngle / 2, spreadAngle / 2);
         Vector2 resultVector = Quaternion.Euler(0f, 0f, randomAngle) * transform.right;
@@ -172,7 +170,7 @@ public class Weapon : MonoBehaviour
         artObject.transform.localPosition = Vector3.zero;
     }
 
-    private void OnDrawGizmos()
+    protected virtual void OnDrawGizmos()
     {
         if (!isDebugEnabled)
         {

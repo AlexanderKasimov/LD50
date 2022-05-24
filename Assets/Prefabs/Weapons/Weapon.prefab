@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4390165165595221849}
-  - component: {fileID: 4390165165595221848}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -34,32 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4390165165595221848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4390165165595221846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83e4da74bb3bbff489265a4c98be688d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <WeaponName>k__BackingField: 
-  <WeaponPrice>k__BackingField: 100
-  RPM: 300
-  ATK: 10
-  spreadAngle: 7
-  projectilePrefab: {fileID: 8175720158471015390, guid: dfd07994aa102e24483a0f620ac4242a, type: 3}
-  muzzle: {fileID: 4390165166390681911}
-  artObject: {fileID: 4390165166135061484}
-  recoilPositionXCurve: {fileID: 11400000, guid: 8c4ff182463553049b083f6436ea08b2, type: 2}
-  recoilRotationCurve: {fileID: 11400000, guid: e646b891dd65e354081996d1318bbdb6, type: 2}
-  recoilDurationMultiplier: 1
-  recoilPositionXMultiplier: 1
-  recoilRotationMultiplier: 1
-  isDebugEnabled: 0
 --- !u!1 &4390165166135061484
 GameObject:
   m_ObjectHideFlags: 0

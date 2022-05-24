@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1899082304608203558
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2180476180390592626, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180476180663454379, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c92c2eea70529654188ab4d33096b5c7, type: 3}
+    - target: {fileID: 2180476181205990931, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: m_Name
+      value: Weapon_Laser_Small
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180476181205990940, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180476181205990940, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180476181205990940, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180476181205990940, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180476181205990940, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180476181205990940, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180476181205990940, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180476181205990940, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180476181205990940, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180476181205990940, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2180476181205990940, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906534276277606699, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: ATK
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906534276277606699, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: RPM
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906534276277606699, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: laserHeight
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906534276277606699, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: spreadAngle
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906534276277606699, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: laserDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906534276277606699, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: isDebugEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906534276277606699, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: traceBoxHeight
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906534276277606699, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: laserBeamPrefab
+      value: 
+      objectReference: {fileID: 6836284282088246499, guid: 9c35b3541e0fe0b4bb720da63e4ac939, type: 3}
+    - target: {fileID: 3906534276277606699, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: recoilDurationMultiplier
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906534276277606699, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: recoilRotationMultiplier
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906534276277606699, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: recoilPositionXMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906534276277606699, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: <WeaponName>k__BackingField
+      value: Small Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906534276277606699, guid: ddf638e8143c24e40a1097faad235720, type: 3}
+      propertyPath: <WeaponPrice>k__BackingField
+      value: 1000
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ddf638e8143c24e40a1097faad235720, type: 3}
