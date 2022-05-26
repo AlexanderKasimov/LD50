@@ -6,17 +6,13 @@ public class Enemy_Flying : Enemy
 {
     [SerializeField]
     private Projectile projectilePrefab;
-    // Start is called before the first frame update
-    // void Start()
-    // {
 
-    // }
+    [SerializeField]
+    protected float impusleForce = 15f;
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-    //     base.Update();
-    // }
+    [SerializeField]
+    protected float spreadAngle = 5f;
+
 
     protected override Vector2 GenerateVectorToTarget()
     {
@@ -28,6 +24,8 @@ public class Enemy_Flying : Enemy
     {
         base.Attack();
         Projectile projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-        projectile.Init(targetDirection, statsModule.ATK);
+        Vector2 spreadVector = RandomFunctionLibrary.RandomVectorInCone(targetDirection, spreadAngle);
+        Vector2 velocity = spreadVector * impusleForce;
+        projectile.Init(velocity, statsModule.ATK);
     }
 }

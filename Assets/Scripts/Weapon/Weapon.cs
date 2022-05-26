@@ -110,17 +110,18 @@ public class Weapon : MonoBehaviour
 
     protected virtual void Fire()
     {
-        spreadVector = CalculateSpread();
+        //spreadVector = CalculateSpread();
+        spreadVector = RandomFunctionLibrary.RandomVectorInCone(transform.right, spreadAngle);
         timeSinceFire = 0f;
         StartCoroutine("PlayRecoil");
     }
 
-    protected Vector2 CalculateSpread()
-    {
-        float randomAngle = Random.Range(-spreadAngle / 2, spreadAngle / 2);
-        Vector2 resultVector = Quaternion.Euler(0f, 0f, randomAngle) * transform.right;
-        return resultVector.normalized;
-    }
+    //protected Vector2 CalculateSpread()
+    //{
+    //    float randomAngle = Random.Range(-spreadAngle / 2, spreadAngle / 2);
+    //    Vector2 resultVector = Quaternion.Euler(0f, 0f, randomAngle) * transform.right;
+    //    return resultVector.normalized;
+    //}
 
 
     private bool CanFire()

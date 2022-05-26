@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: RenderTexture
+    uniqueID: 1599791023
+    locked: 0
   - name: Background
     uniqueID: 4072174773
     locked: 0

@@ -125,7 +125,7 @@ MonoBehaviour:
   movementSpeed: 4
   attackCooldown: 3
   attackRange: 10
-  physicalProjectilePrefab: {fileID: 8435987671605992410, guid: f39e0bd5dec14374e98a1135fbcba81f, type: 3}
+  projectilePrefab: {fileID: 7327243791322623913, guid: 66aa8792345c27b4d990aae0e575cd50, type: 3}
   launchAnlge: 60
   angleRandom: {x: -5, y: 5}
   targetRandomVector: {x: -2, y: 2}

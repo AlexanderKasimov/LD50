@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy_Artillery : Enemy
 {
     [SerializeField]
-    private PhysicalProjectile physicalProjectilePrefab;
+    private Projectile projectilePrefab;
     [SerializeField]
     private float launchAnlge = 30f;
 
@@ -24,26 +24,26 @@ public class Enemy_Artillery : Enemy
         x = Mathf.Abs(x);
         y = Mathf.Abs(y);
         float angle = Mathf.Deg2Rad * (launchAnlge + Random.Range(angleRandom.x, angleRandom.y));
-        float velocity = Mathf.Sqrt(x * x * (9.81f) / (x * Mathf.Sin(2 * angle) - (2 * y * Mathf.Cos(angle) * Mathf.Cos(angle))));
-        // Debug.Log(velocity);
-        //Try remove random - to fix Nan velocity
-        if (float.IsNaN(velocity))
+        float force = Mathf.Sqrt(x * x * (9.81f) / (x * Mathf.Sin(2 * angle) - (2 * y * Mathf.Cos(angle) * Mathf.Cos(angle))));
+        // Debug.Log(force);
+        //Try remove random - to fix Nan force
+        if (float.IsNaN(force))
         {
             x = target.transform.position.x - transform.position.x;
             y = target.transform.position.y - transform.position.y;
             x = Mathf.Abs(x);
             y = Mathf.Abs(y);            
-            velocity = Mathf.Sqrt(x * x * (9.81f) / (x * Mathf.Sin(2 * angle) - (2 * y * Mathf.Cos(angle) * Mathf.Cos(angle))));
-            // Debug.Log(velocity);          
+            force = Mathf.Sqrt(x * x * (9.81f) / (x * Mathf.Sin(2 * angle) - (2 * y * Mathf.Cos(angle) * Mathf.Cos(angle))));
+            // Debug.Log(force);          
         }
-        //Don't launch if velocity still Nan or launch with default - or even normal projectile
-        if (!float.IsNaN(velocity))
+        //Don't launch if force still Nan or launch with default - or even normal projectile
+        if (!float.IsNaN(force))
         {         
             Vector2 launchVector = Quaternion.AngleAxis(Mathf.Sign(targetDirection.x) * launchAnlge, Vector3.forward) * targetDirection;
-            PhysicalProjectile projectile = Instantiate(physicalProjectilePrefab, transform.position, Quaternion.identity);
-            projectile.Init(launchVector, statsModule.ATK, velocity);
+            Projectile projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            Vector2 velocity = launchVector * force;
+            projectile.Init(velocity, statsModule.ATK);
         }
-
      
     }
 

@@ -124,5 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 4
   attackCooldown: 2
-  attackRange: 8
-  projectilePrefab: {fileID: 6884301457850121954, guid: 9d913df2db121904bb2835a6bf63e059, type: 3}
+  attackRange: 6
+  projectilePrefab: {fileID: 4700341494888282415, guid: 73d174ed12ca4824cb58a98168481fd3, type: 3}
+  impusleForce: 15
+  spreadAngle: 5

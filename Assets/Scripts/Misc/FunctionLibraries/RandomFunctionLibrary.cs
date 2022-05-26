@@ -5,7 +5,8 @@ using System.Linq;
 
 public static class RandomFunctionLibrary
 {
-
+    
+    #region Random weights, arrays
     //Choose random index from array of weights - alg from unity docs
     //https://docs.unity3d.com/2021.2/Documentation/Manual/class-Random.html
 
@@ -90,5 +91,12 @@ public static class RandomFunctionLibrary
         return sum;
     }
 
+    #endregion
 
+    public static Vector2 RandomVectorInCone(Vector2 coneDirection, float coneAngle)
+    {
+        float angle = Random.Range(-coneAngle / 2, coneAngle / 2);
+        Vector2 resultVector = Quaternion.Euler(0f, 0f, angle) * coneDirection;
+        return resultVector.normalized;
+    }
 }
