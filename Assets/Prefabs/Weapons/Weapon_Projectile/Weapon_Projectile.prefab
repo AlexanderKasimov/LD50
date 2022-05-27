@@ -96,6 +96,6 @@ MonoBehaviour:
   recoilRotationMultiplier: 1
   muzzle: {fileID: 5580427288914153697}
   artObject: {fileID: 5580427289178102330}
-  isDebugEnabled: 1
+  isDebugEnabled: 0
   projectilePrefab: {fileID: 7319143437453036654, guid: ba32cc501051a754c89fb693f9ca57e0, type: 3}
   impulseForce: 20

@@ -40,9 +40,15 @@ public class HitEffect : MonoBehaviour
         {
             float parameterValue = curve.animationCurve.Evaluate(time / duration);
             foreach (var item in spriteRenderers)
-            {            
-                // Debug.Log("Setted:" +parameterValue);
+            {   
+                //When weapon changes while being hit -> can't finish coroutine -> isPlaying doesn't reset
+                if (!item)
+                {
+                    Debug.Log("No item!");
+                    continue;
+                }
                 item.material.SetFloat("_Control", parameterValue);
+                // Debug.Log("Setted:" +parameterValue);
             }
             time += Time.deltaTime;
             yield return null;
@@ -50,6 +56,10 @@ public class HitEffect : MonoBehaviour
         //For safety - reset all SRs parameters to default - 0f
         foreach (var item in spriteRenderers)
         {
+            if (!item)
+            {
+                continue;
+            }
             item.material.SetFloat("Control", 0f);
         }
     

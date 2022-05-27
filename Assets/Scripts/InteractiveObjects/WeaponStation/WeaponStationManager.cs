@@ -23,9 +23,9 @@ public class WeaponStationManager : MonoBehaviour
     [Header("Sarah")]
     [SerializeField]
     private Transform sarahScrollViewContentTransform;
-
-    [SerializeField]
-    private List<Weapon> sarahWeapons;
+    //For debug uses players list
+    //[SerializeField]
+    //private List<Weapon> sarahWeapons;
 
     //Private 
     //Player
@@ -55,7 +55,9 @@ public class WeaponStationManager : MonoBehaviour
     void Start()
     {
         GenerateButtonsForCharacter(GameManager.instance.PlayerCharacter, playerWeapons, playerScrollViewContentTransform, playerWeaponButtons, ref currentPlayerWeaponButton); 
-        GenerateButtonsForCharacter(GameManager.instance.SarahCharacter, sarahWeapons, sarahScrollViewContentTransform, sarahWeaponButtons, ref currentSarahWeaponButton);      
+        //For debug - one list for both
+        GenerateButtonsForCharacter(GameManager.instance.SarahCharacter, playerWeapons, sarahScrollViewContentTransform, sarahWeaponButtons, ref currentSarahWeaponButton);      
+        //GenerateButtonsForCharacter(GameManager.instance.SarahCharacter, sarahWeapons, sarahScrollViewContentTransform, sarahWeaponButtons, ref currentSarahWeaponButton);      
     }
 
     public void OnClose()

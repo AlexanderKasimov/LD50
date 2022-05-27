@@ -18,12 +18,18 @@ public class ProjectileCollision_AoE : ProjectileCollision
     }
 
     protected void OnDestroy()
-    {    
+    {   
+        //Error if projectile was preplaced on scene (can remove later?)
+        if (!gameObject.scene.isLoaded)
+        {
+            Debug.Log("Not loaded!");
+            return;
+        }
         Explode();        
     }
 
     protected void Explode()
-    {
+    {      
         if (isExploded)
         {
             return;
@@ -42,7 +48,7 @@ public class ProjectileCollision_AoE : ProjectileCollision
         //Play VFX
         if (explosionVFX)
         {
-            Instantiate(explosionVFX, transform.position, Quaternion.identity);
+            Instantiate(explosionVFX, transform.position, Quaternion.identity);         
         }
 
         Destroy(gameObject);
